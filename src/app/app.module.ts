@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -12,20 +12,24 @@ import { PostsComponent } from "./posts/posts.component";
 import { UsersComponent } from "./users/users.component";
 import { HomeComponent } from "./home/home.component";
 import { NotFoundComponent } from "./notfound.component";
+import { RouterLinkActive, RouterModule } from "@angular/router"
+import { NewUserComponent } from "./users/newuser.component";
+import { CanDeactivateTeam } from './users/candeactivate-newuser.component'
 
 @NgModule({
   declarations: [
-    AppComponent, NavComponent, UsersComponent, PostsComponent, HomeComponent, NotFoundComponent
+    AppComponent, NavComponent, UsersComponent, PostsComponent, HomeComponent, NotFoundComponent, NewUserComponent
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     FormsModule,
     HttpModule,
     usersRouting,
     postsRouting,
     routing
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [CanDeactivateTeam],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

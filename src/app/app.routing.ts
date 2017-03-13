@@ -4,5 +4,6 @@ import { NotFoundComponent } from "./notfound.component";
 
 export const routing = RouterModule.forRoot([
     { path: 'home', component: HomeComponent },
-    { path: '**', redirectTo: 'home'}
+    { path: '', component: HomeComponent },
+    { path: '**', component: NotFoundComponent}
 ])

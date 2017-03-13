@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'nav-bar',
@@ -19,8 +19,8 @@ import {Component} from '@angular/core';
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a [routerLink]="'users'">Users</a></li>
-                    <li><a [routerLink]="'posts'">Posts</a></li>
+                    <li routerLinkActive="active"><a [routerLink]="'users'">Users</a></li>
+                    <li routerLinkActive="active"><a [routerLink]="'posts'">Posts</a></li>
                 </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
